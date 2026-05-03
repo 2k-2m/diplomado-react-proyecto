@@ -1,4 +1,4 @@
-import { BrowserRouter, Navigate, Route, Routes } from 'react-router-dom';
+import { HashRouter, Navigate, Route, Routes } from 'react-router-dom';
 import { LoginPage, NotFoundPage, UserPage } from '../pages/public';
 import { PerfilPage, TaskPage } from '../pages/private';
 import { PrivateLayout } from '../layouts/PrivateLayout';
@@ -12,7 +12,7 @@ Route es un componente que se utiliza para definir una ruta específica dentro d
 
 export const AppRouter = () => {
   return (
-    <BrowserRouter>
+    <HashRouter>
       <Routes>
         <Route element={<PublicRoute />}>
           <Route path="/" element={<Navigate to="/login" />} />
@@ -27,6 +27,6 @@ export const AppRouter = () => {
 
         <Route path="*" element={<NotFoundPage />} />
       </Routes>
-    </BrowserRouter>
+    </HashRouter>
   );
 };
